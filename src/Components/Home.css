@@ -1,0 +1,22 @@
+.nextGame{
+    display:default
+}
+.body {
+    margin-top: "10vh";
+    color:white;
+    background-image: url(LeaguePhoto.png);
+    background-size: auto 80vh;
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    
+  }
+  .bodyShade{
+    background-color: rgba(0,0,0,0.3)
+  }
+@media screen and (max-width: 600px) {
+    .nextGame {
+      display: none
+    }
+    
+  }
