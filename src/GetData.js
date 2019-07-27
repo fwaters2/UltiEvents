@@ -13,54 +13,63 @@ export default class GetData extends Component {
   }
   componentDidMount() {
     const db = Firestore.firestore();
+    const categories = ["Kaohsiung",  "World"];
     //render Firestore Data
-    var stuff2 = [];
-    db.collection("Kaohsiung").onSnapshot(snapshot => {
-      snapshot.forEach(doc => {
-        stuff2.push({
-          date: doc.data().date,
-          description: doc.data().description,
-          location: doc.data().location,
-          title: doc.data().title,
-          eventId: doc.id
-        });
-      });
-      this.setState({ kaohsiungEvents: stuff2 });
-      stuff2 = [];
-    });
-    db.collection("Taiwan").onSnapshot(snapshot => {
-      snapshot.forEach(doc => {
-        stuff2.push({
-          date: doc.data().date,
-          description: doc.data().description,
-          location: doc.data().location,
-          title: doc.data().title,
-          eventId: doc.id
-        });
-      });
-      this.setState({ taiwanEvents: stuff2 });
-      stuff2 = [];
-    });
-    db.collection("World").onSnapshot(snapshot => {
-      snapshot.forEach(doc => {
-        stuff2.push({
-          date: doc.data().date,
-          description: doc.data().description,
-          location: doc.data().location,
-          title: doc.data().title,
-          eventId: doc.id
-        });
-      });
-      this.setState({ worldEvents: stuff2 });
-      stuff2 = [];
-    });
+    var dbData = [];
+    categories.forEach(category =>
+      db
+        .collection(category)
+        .orderBy("Mo")
+        .onSnapshot(snapshot => {
+          snapshot.forEach(doc => {
+            const dataKeys = Object.keys(doc.data());
+            let eventInfo = {};
+            dataKeys.forEach(key => (eventInfo[key] = doc.data()[key]));
+            dbData.push(eventInfo);
+          });
+          const name = category.toLocaleLowerCase().concat("Events");
+          this.setState({ [name]: dbData });
+          dbData = [];
+        })
+    );
+   
+      db
+        .collection("Taiwan")
+        
+        .onSnapshot(snapshot => {
+          snapshot.forEach(doc => {
+            const dataKeys = Object.keys(doc.data());
+            let eventInfo = {};
+            dataKeys.forEach(key => (eventInfo[key] = doc.data()[key]));
+            dbData.push(eventInfo);
+          });
+          const name = "taiwanEvents"
+          this.setState({ [name]: dbData });
+          dbData = [];
+        })
+        db
+        .collection("Kaohsiung")
+        
+        .onSnapshot(snapshot => {
+          snapshot.forEach(doc => {
+            const dataKeys = Object.keys(doc.data());
+            let eventInfo = {};
+            dataKeys.forEach(key => (eventInfo[key] = doc.data()[key]));
+            dbData.push(eventInfo);
+          });
+          const name = "kaohsiungEvents"
+          this.setState({ [name]: dbData });
+          dbData = [];
+        })
+    
   }
   render() {
+    const {kaohsiungEvents, taiwanEvents, worldEvents } = this.state
     return (
       <Home
-        khEvents={this.state.kaohsiungEvents}
-        taiwanEvents={this.state.taiwanEvents}
-        worldEvents={this.state.worldEvents}
+        khEvents={kaohsiungEvents}
+        taiwanEvents={taiwanEvents}
+        worldEvents={worldEvents}
       />
     );
   }

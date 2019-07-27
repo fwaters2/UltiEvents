@@ -11,10 +11,11 @@ import firebase from '../Utils/Firebase'
 export default function FormDialog(props) {
   const { open, setOpen, handleClickOpen, handleClose, region } = props;
     const [values, setValues] = React.useState({
-        title:"",
+        Name:"",
+        Country:"",
         date:"",
-        location:"",
-        description:""
+        Link:"",
+        City:""
     })
     const handleChange = name => event => {
         setValues({ ...values, [name]: event.target.value });
@@ -31,33 +32,41 @@ export default function FormDialog(props) {
     >
       <DialogTitle id="form-dialog-title">Add Event!</DialogTitle>
       <DialogContent>
-        <DialogContentText>Add an event to {region}:</DialogContentText>
-        <TextField
-          autofocus
+      <TextField
+          autoFocus
           margin="dense"
-          id="title"
+          id="link"
+          label="Event Link"
+          type="text"
+          fullWidth
+          onChange={handleChange("Link")}
+        />
+        <TextField
+          margin="dense"
+          id="name"
           label="Name"
           type="text"
           fullWidth
-          onChange={handleChange("title")}
+          onChange={handleChange("Name")}
         />
         <TextField margin="dense" id="date" type="date" fullWidth onChange={handleChange("date")}/>
         <TextField
           margin="dense"
-          id="location"
-          label="Location"
+          id="country"
+          label="Country"
           type="text"
           fullWidth
-          onChange={handleChange("location")}
+          onChange={handleChange("Country")}
         />
         <TextField
           margin="dense"
-          id="description"
-          label="Description (optional)"
+          id="city"
+          label="City"
           type="text"
           fullWidth
-          onChange={handleChange("description")}
+          onChange={handleChange("City")}
         />
+        
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">

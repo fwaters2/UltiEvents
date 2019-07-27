@@ -7,23 +7,24 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ProfileIcon from "@material-ui/icons/AccountCircle";
 import SwipeableViews from "react-swipeable-views";
 import { makeStyles } from "@material-ui/styles";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {
   Paper,
   Grid,
-  Card,
   AppBar,
   Button,
   Tabs,
   Tab,
   Typography,
   Box,
-  Link
+  Link,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails
 } from "@material-ui/core";
 import Event from "./Event";
 
 import FormDialog from "./NewEvent";
-
-
 
 const useStyles = makeStyles({
   theme: {},
@@ -31,7 +32,8 @@ const useStyles = makeStyles({
     height: "8vh"
   },
   nextGame: {
-    height: "40vh"
+    height: "40vh",
+    padding:"5px"
   },
   heroArea: {
     padding: "5vh",
@@ -45,7 +47,9 @@ const useStyles = makeStyles({
     //marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    textAlign: "center"
+
   }
 });
 
@@ -70,25 +74,22 @@ TabPanel.propTypes = {
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired
 };
-
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
     "aria-controls": `full-width-tabpanel-${index}`
   };
 }
-
 export default function Home(props) {
   const classes = useStyles();
-  
-  const [value, setValue] = React.useState(0);
-const [region, setRegion] = React.useState("Kaohsiung")
+  const [value, setValue] = React.useState(2);
+  const [region, setRegion] = React.useState("World");
   const [open, setOpen] = React.useState(false);
-  const khEvents = props.khEvents
-  const taiwanEvents = props.taiwanEvents
-  const worldEvents = props.worldEvents
+  const khEvents = props.khEvents;
+  const taiwanEvents = props.taiwanEvents;
+  const worldEvents = props.worldEvents;
   function handleClickOpen(place) {
-      setRegion(place)
+    setRegion(place);
     setOpen(true);
   }
   function handleClose() {
@@ -102,24 +103,23 @@ const [region, setRegion] = React.useState("Kaohsiung")
   function handleChangeIndex(index) {
     setValue(index);
   }
-
   return (
     <div style={{ backgroundColor: "black" }}>
-        {console.log(props)}
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar style={{backgroundColor:"rgba(0,0,0,0.2)"}} position="static">
+        <Toolbar >
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            style={{display:"none"}}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             Kaohsiung Ultimate
           </Typography>
-          <IconButton edge="start" color="inherit" aria-label="menu">
+          <IconButton edge="start" color="inherit" aria-label="menu" style={{display:"none"}}>
             <ProfileIcon />
           </IconButton>
         </Toolbar>
@@ -138,11 +138,10 @@ const [region, setRegion] = React.useState("Kaohsiung")
                 <Typography variant="h5">Play Ultimate:</Typography>
                 <Paper className={classes.nextGame}>
                   <Typography variant="h6">Sunday 3:30pm Aozhidi</Typography>
-
                   <iframe
                     title="map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17513.858504630487!2d120.29406705213856!3d22.659931969850735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04fe0aa18229%3A0x880b91606fed3f55!2sAozihdi+Station!5e0!3m2!1sen!2stw!4v1564134326608!5m2!1sen!2stw"
-                    style={{ maxWidth: "300px", frameBorder: "0", border: 0 }}
+                    style={{  frameBorder: "0", border: 0 }}
                   />
                   <Typography variant="body1">
                     Pickup at Aozhidi! All levels welcome!
@@ -152,7 +151,6 @@ const [region, setRegion] = React.useState("Kaohsiung")
             </Grid>
           </div>
         </div>
-
         <AppBar position="static" color="default">
           <Tabs
             value={value}
@@ -173,33 +171,83 @@ const [region, setRegion] = React.useState("Kaohsiung")
           onChangeIndex={handleChangeIndex}
         >
           <TabPanel value={value} index={0} dir={classes.theme.direction}>
-
-            {khEvents.map(event=>(
-                <Event event={event} />
+            {khEvents.map(event => (
+              // <Event event={event} />
+              <Paper style={{ margin: "10px 0", padding: "5px" }}>
+      <Grid container>
+        <Grid xs={3}>
+          <Typography variant="body2">
+            {event.date}
+          </Typography>
+        </Grid>
+        <Grid xs={9}>
+          <Typography variant="body1">
+            <Link href={event.Link}><strong>{event.title}</strong></Link>
+          </Typography>
+          <Typography alignText="right" variant="body2">
+             {event.location}
+          </Typography>
+          
+        </Grid>
+      </Grid>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>More Info</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>Cost: --- Gender Ratio: --- Other: ---</Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+    </Paper>
             ))}
-            <Button variant="contained" color="primary" fullWidth onClick={() => handleClickOpen("Kaohsiung")}>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              onClick={() => handleClickOpen("Kaohsiung")}
+            >
               Add New Event
             </Button>
           </TabPanel>
           <TabPanel value={value} index={1} dir={classes.theme.direction}>
-            {taiwanEvents.map(event=>(
-                <Event event={event} />
+            {taiwanEvents.map(event => (
+              <Event event={event} />
             ))}
-            <Button variant="contained" color="primary" fullWidth onClick={() => handleClickOpen("Taiwan")}>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              onClick={() => handleClickOpen("Taiwan")}
+            >
               Add New Event
             </Button>
           </TabPanel>
           <TabPanel value={value} index={2} dir={classes.theme.direction}>
-            {worldEvents.map(event=>(
-                <Event event={event} />
+            {worldEvents.map(event => (
+              <Event event={event} />
             ))}
-            <Button variant="contained" color="primary" fullWidth onClick={() => handleClickOpen("World")}>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              onClick={() => handleClickOpen("World")}
+            >
               Add New Event
             </Button>
           </TabPanel>
         </SwipeableViews>
       </div>
-      <FormDialog open={open} setOpen={setOpen} handleClickOpen={handleClickOpen} handleClose={handleClose} region={region}/>
+      <FormDialog
+        open={open}
+        setOpen={setOpen}
+        handleClickOpen={handleClickOpen}
+        handleClose={handleClose}
+        region={region}
+      />
     </div>
   );
 }
