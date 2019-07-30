@@ -39,18 +39,6 @@ export default function WorldEvent(props) {
           
         </Grid>
       </Grid>
-      <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>More Info</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>Cost: --- Gender Ratio: --- Other: ---</Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
     </Paper>
   );
 }
