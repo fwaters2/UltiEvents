@@ -1,0 +1,1 @@
+This is where you can write functions that you used to repeat a ton of times

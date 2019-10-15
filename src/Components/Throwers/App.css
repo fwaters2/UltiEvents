@@ -1,0 +1,116 @@
+.Container {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(61, 145, 255);
+  height: 45px;
+  width: 100%;
+}
+.Container-Text {
+  position:absolute;
+  font-weight: bold;
+  text-shadow: 1px 2px #000000;
+  color: rgb(229, 5, 3);
+  margin:20px 0;
+left: 50%;
+transform: translatex(-50%);
+  font-size: 12pt;
+
+}
+.Container-StickFig {
+  position: relative;
+  height:30px;
+  width: 20px;
+  margin: 10px 25px 0;
+}
+.StickOneArm{
+  animation: armSwing 3s infinite alternate;
+}
+.StickTwoArm{
+  animation: armSwing 3s infinite alternate-reverse;
+}
+.StickTwo{
+  right: 0;
+  transform: scaleX(-1);
+}
+.Color {
+  background-color: black;
+}
+.Head {
+  height: 7px;
+  width: 7px;
+  border-radius: 100%;
+  margin: auto;
+}
+.Stick {
+  position: absolute;
+  border-radius: 2px;
+  width: 1px;
+}
+.Body {
+  height: 15px;
+  top: 6px;
+  left: 9px;
+}
+.Appendage {
+  height: 9px;
+}
+.Left {
+  left: 7px;
+  transform: rotate(20deg);
+}
+.Right {
+  right: 8px;
+  transform: rotate(-20deg);
+  
+}
+.Arm {
+  top: 9px;
+}
+.Leg {
+  top: 20px;
+}
+.CatchArm{
+ transform-origin: center 0;
+ transform: rotate(-120deg);
+ top: 9px;
+ left: 9px;
+ 
+}
+.Frisbee {
+  position: relative;
+  background-color:  rgb(229, 5, 3);
+  height: 2px;
+  width: 10px;
+  border-radius: 100%;
+  top: 14px;
+  animation: fly 3s infinite alternate ease-in-out;
+  z-index: 1;
+}
+@keyframes fly {
+  0% {
+    left: calc(-50% + 44px);
+    box-shadow: 0px 0px #000000;
+    width: 10px;
+    height: 2px;
+  }
+  50%{
+    box-shadow:10px 10px #000000;
+    width: 15px;
+    height: 3px;
+  }
+  100% {
+    left: calc(50% - 45px);
+    box-shadow: 0px 0px #000000;
+    width: 10px;
+    height: 2px;
+  }
+}
+@keyframes armSwing {
+  from {
+    transform: rotate(-120deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
