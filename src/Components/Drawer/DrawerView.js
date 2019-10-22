@@ -61,20 +61,20 @@ export default function DrawerView(props) {
           </ListItemIcon>
           <ListItemText primary="Location" />
         </ListItem>
-        <ListItem>
-          <ListItemText primary="Coming Soon" />
-        </ListItem>
-        <ListItem button disabled>
+        <ListItem button onClick={()=>handleClick("Rosters")}>
           <ListItemIcon>
             <Group />
           </ListItemIcon>
           <ListItemText primary="Rosters" />
         </ListItem>
-        <ListItem button disabled>
+        <ListItem button onClick={()=>handleClick("Standings")}>
           <ListItemIcon>
             <FormatListNumbered />
           </ListItemIcon>
           <ListItemText primary="Standings" />
+        </ListItem>
+        <ListItem>
+          <ListItemText primary="Coming Soon" />
         </ListItem>
         <ListItem divider button disabled>
           <ListItemIcon>

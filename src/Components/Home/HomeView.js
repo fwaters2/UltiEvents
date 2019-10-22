@@ -5,7 +5,8 @@ import {
   ListItemIcon,
   ListItemText,
   Box,
-  Container
+  Container,
+  Hidden
 } from "@material-ui/core";
 import {
   CalendarToday,
@@ -22,25 +23,55 @@ export default function HomeView(props) {
   const { changePage } = props;
   return (
     <React.Fragment>
+      {/*Desktop View */}
+      {/* <Hidden smDown > */}
+
       <Box
         style={{
+          position: "absolute",
           height: "50vw",
-          maxHeight: "70vh",
+          minHeight: "50vh",
+          maxHeight: "100vh",
           width: "100%",
-          objectFit: "contain"
+          zIndex: -2,
+          backgroundColor: "black"
         }}
       >
-         <img //className="masked" 
-         src={LeaguePhoto}  
-        alt="LeaguePhoto"
-        style={{
-          height: "100%",
-          width: "100%",
-          objectFit: "cover",
-          //boxShadow: "10px 10px 5px"
-        }}
-        /> 
-        {/* <div
+        <img //className="masked"
+          src={LeaguePhoto}
+          alt="LeaguePhoto"
+          style={{
+            height: "100%",
+            width: "100%",
+            objectFit: "cover"
+            //boxShadow: "10px 10px 5px"
+          }}
+        />
+      </Box>
+      <div style={{ height: "50vw" }} />
+      {/* </Hidden> */}
+      {/*Mobile View */}
+      <Hidden xsUp>
+        <Box
+          style={{
+            height: "50vw",
+            maxHeight: "70vh",
+            width: "100%",
+            objectFit: "contain"
+          }}
+        >
+          <img //className="masked"
+            src={LeaguePhoto}
+            alt="LeaguePhoto"
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "cover"
+              //boxShadow: "10px 10px 5px"
+            }}
+          />
+
+          {/* <div
           style={{
             //backgroundImage:"url( " + LeaguePhoto + ")",
             //backgroundSize:"1"
@@ -65,7 +96,8 @@ export default function HomeView(props) {
             }}
           />
         </div> */}
-      </Box>
+        </Box>
+      </Hidden>
       <Container
         maxWidth="sm"
         style={{
@@ -79,7 +111,7 @@ export default function HomeView(props) {
             <ListItemIcon>
               <CalendarToday />
             </ListItemIcon>
- 
+
             <ListItemText
               primary="Schedule"
               secondary="10/19, 10/26, 11/16, 11/23, 12/7"
@@ -94,20 +126,20 @@ export default function HomeView(props) {
               secondary="MRT R18: Oil Refinery"
             />
           </ListItem>
-          <ListItem>
-            <ListItemText primary="Coming Soon:" />
-          </ListItem>
-          <ListItem button disabled>
+          <ListItem button onClick={() => changePage("Rosters")}>
             <ListItemIcon>
               <Group />
             </ListItemIcon>
             <ListItemText primary="Rosters" />
           </ListItem>
-          <ListItem button disabled>
+          <ListItem button onClick={()=>changePage("Standings")}>
             <ListItemIcon>
               <FormatListNumbered />
             </ListItemIcon>
             <ListItemText primary="Standings" />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="Coming Soon:" />
           </ListItem>
           <ListItem divider button disabled>
             <ListItemIcon>

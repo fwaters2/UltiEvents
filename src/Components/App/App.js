@@ -18,7 +18,12 @@ export default function App() {
       />
       <Container
         maxWidth="xl"
-        style={{ padding: 0, display: "flex", flexDirection: "column", height:"100vh" }}
+        style={{
+          padding: 0,
+          display: "flex",
+          flexDirection: "column",
+          height: "100vh"
+        }}
       >
         <StateStore />
       </Container>

@@ -1,0 +1,79 @@
+[
+    {
+      "Rank": "#1",
+      "Team": "Spirit Animals",
+      "Wins": 4,
+      "Losses": 0,
+      "PCT": 1,
+      "PF": 38,
+      "PA": 26,
+      "PlusMinus": 3,
+      "SpiritScore": 11
+    },
+    {
+      "Rank": "#2",
+      "Team": "Big Dumps",
+      "Wins": 2,
+      "Losses": 1,
+      "PCT": 0.667,
+      "PF": 22,
+      "PA": 22,
+      "PlusMinus": 0,
+      "SpiritScore": 11.33
+    },
+    {
+      "Rank": "#3",
+      "Team": "Galaxy",
+      "Wins": 2,
+      "Losses": 1,
+      "PCT": 0.667,
+      "PF": 27,
+      "PA": 20,
+      "PlusMinus": 2.3,
+      "SpiritScore": 11
+    },
+    {
+      "Rank": "#4",
+      "Team": "Disc Jockeys",
+      "Wins": 2,
+      "Losses": 1,
+      "PCT": 0.667,
+      "PF": 20,
+      "PA": 19,
+      "PlusMinus": 0.3,
+      "SpiritScore": 10.67
+    },
+    {
+      "Rank": "#5",
+      "Team": "UP!",
+      "Wins": 1,
+      "Losses": 2,
+      "PCT": 0.333,
+      "PF": 24,
+      "PA": 26,
+      "PlusMinus": -0.7,
+      "SpiritScore": 10.67
+    },
+    {
+      "Rank": "#6",
+      "Team": "Young Bloods",
+      "Wins": 0,
+      "Losses": 3,
+      "PCT": 0,
+      "PF": 18,
+      "PA": 26,
+      "PlusMinus": -2.7,
+      "SpiritScore": 10.33
+    },
+    {
+      "Rank": "#7",
+      "Team": "Hakuna Matata",
+      "Wins": 0,
+      "Losses": 3,
+      "PCT": 0,
+      "PF": 15,
+      "PA": 25,
+      "PlusMinus": -3.3,
+      "SpiritScore": 10.67
+    }
+  ]

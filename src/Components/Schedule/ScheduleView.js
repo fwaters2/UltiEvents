@@ -48,7 +48,7 @@ const exampleSched = require("./Fall19Schedule.json");
 // const distinct = (value, index, self) => {
 //   return self.indexOf(value) === index
 // }
-const timesWeek1 = ["12:30", "1:20", "2:10", "3:00", "3:50", "4:40"];
+const timesWeek1 = ["1:00", "1:50", "2:40", "3:30", "4:20"];
 
 export default function ScheduleView() {
   //const { setPage, handleGameChoice } = props;
@@ -80,7 +80,7 @@ export default function ScheduleView() {
        
         <AppBar position="static" color="inherit" >
           <Toolbar>
-          <Typography className="dateText" variant='h5' >Schedule 10/19</Typography>
+          <Typography className="dateText" variant='h5' >Schedule 10/26</Typography>
           </Toolbar>
         </AppBar>
         <Grid className="schedule-container" container>
