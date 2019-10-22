@@ -1,9 +1,6 @@
 import React from "react";
 import {
-  List,
-  ListItem,
   Button,
-  ListItemText,
   Paper,
   Table,
   TableHead,

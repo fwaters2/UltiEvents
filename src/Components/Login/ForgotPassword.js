@@ -1,14 +1,11 @@
 import React from "react";
 import {
-  Box,
   TextField,
   Button,
-  Typography,
   DialogTitle,
   DialogActions,
   DialogContent
 } from "@material-ui/core";
-import { ArrowBack } from "@material-ui/icons";
 import Firebase from "../../Assets/Firebase";
 
 export default function ForgotPassword(props) {

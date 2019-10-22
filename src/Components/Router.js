@@ -4,6 +4,7 @@ import Schedule from "./Schedule/Index";
 import Location from "./Location/Index";
 import Rosters from "./Rosters/Index"
 import Standings from "./Standings/Index"
+import Stats from "./Stats/Index"
 import Profile from "./Profile/Index"
 // import CardDeals from "./CardDeals/Index"
 
@@ -20,6 +21,8 @@ export default function Router(props) {
       return <Rosters appState={appState} changePage={changePage} />
     case "Standings":
       return <Standings appState={appState} changePage={changePage} />
+      case "Stats":
+        return <Stats appState={appState} changePage={changePage} />
       case "Profile":
       return <Profile appState={appState} userInfo={userInfo}/>
     // case "CardDeals":

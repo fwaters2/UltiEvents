@@ -9,9 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Register from "./Register";
 import SignIn from "./SignIn";
-import Firebase from "../../Assets/Firebase";
-import { Button, TextField } from "@material-ui/core";
-import { ArrowBack } from "@material-ui/icons";
+import { Button } from "@material-ui/core";
 import ForgotPassword from "./ForgotPassword";
 
 function TabPanel(props) {

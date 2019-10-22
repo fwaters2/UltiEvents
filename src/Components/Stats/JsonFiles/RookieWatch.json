@@ -1,0 +1,98 @@
+[
+    {
+      "Name": "John Kearle",
+      "Team": "Big Dumps",
+      "Assists": 2,
+      "Goals": 10,
+      "Ds": 6,
+      "Total": 18
+    },
+    {
+      "Name": "Chase Pilon",
+      "Team": "Galaxy",
+      "Assists": 1,
+      "Goals": 4,
+      "Ds": 1,
+      "Total": 6
+    },
+    {
+      "Name": "Maddy Oswald",
+      "Team": "Galaxy",
+      "Assists": 1,
+      "Goals": 4,
+      "Ds": 1,
+      "Total": 6
+    },
+    {
+      "Name": "Sam Chamberlain",
+      "Team": "Disc Jockeys",
+      "Assists": 1,
+      "Goals": 5,
+      "Ds": 0,
+      "Total": 6
+    },
+    {
+      "Name": "Hannah Gilbert",
+      "Team": "Spirit Animals",
+      "Assists": 0,
+      "Goals": 3,
+      "Ds": 2,
+      "Total": 5
+    },
+    {
+      "Name": "Andrew Gentile",
+      "Team": "Big Dumps",
+      "Assists": 1,
+      "Goals": 2,
+      "Ds": 1,
+      "Total": 4
+    },
+    {
+      "Name": "Sonia Maset",
+      "Team": "Hakuna Matata",
+      "Assists": 0,
+      "Goals": 1,
+      "Ds": 2,
+      "Total": 3
+    },
+    {
+      "Name": "Chloe McMynn",
+      "Team": "Big Dumps",
+      "Assists": 2,
+      "Goals": 0,
+      "Ds": 1,
+      "Total": 3
+    },
+    {
+      "Name": "Jim Jin-You Kang",
+      "Team": "Young Bloods",
+      "Assists": 0,
+      "Goals": 0,
+      "Ds": 2,
+      "Total": 2
+    },
+    {
+      "Name": "Matus Peciar",
+      "Team": "Disc Jockeys",
+      "Assists": 0,
+      "Goals": 1,
+      "Ds": 0,
+      "Total": 1
+    },
+    {
+      "Name": "Kareena Lin",
+      "Team": "Young Bloods",
+      "Assists": 0,
+      "Goals": 1,
+      "Ds": 0,
+      "Total": 1
+    },
+    {
+      "Name": "Lindsay Laronde",
+      "Team": "Hakuna Matata",
+      "Assists": 0,
+      "Goals": 1,
+      "Ds": 0,
+      "Total": 1
+    }
+  ]

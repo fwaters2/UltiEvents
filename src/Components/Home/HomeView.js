@@ -138,14 +138,14 @@ export default function HomeView(props) {
             </ListItemIcon>
             <ListItemText primary="Standings" />
           </ListItem>
-          <ListItem>
-            <ListItemText primary="Coming Soon:" />
-          </ListItem>
-          <ListItem divider button disabled>
+          <ListItem divider button onClick={()=>changePage("Stats")}>
             <ListItemIcon>
               <ShowChart />
             </ListItemIcon>
             <ListItemText primary="Stats" />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="Coming Soon:" />
           </ListItem>
 
           <ListItem button disabled>
